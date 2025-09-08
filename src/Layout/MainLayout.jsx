@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Shoes2 from "/img/p2.png";
 import Shoes3 from "/img/p3.png";
 import Shoes4 from "/img/p4.png";
@@ -8,8 +7,7 @@ import LogoImg from "/img/logo.jpg";
 import Shoes1 from "/img/p1.png";
 import Navbar from "../components/Navbar";
 import AvailableShoes from "../components/AvailableShoes";
-import Cart from "../components/cart";
-
+import Cart from '../components/Cart'
 
 const MainLayout = () => {
   const [cartItem, setCartItem] = useState([]); 
