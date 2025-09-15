@@ -9,16 +9,13 @@ const Navbar = () => {
       <img
         className='w-12 h-12 rounded-full '
         src={LogoImg} alt="Logo" />
-      <nav className=' md:flex gap-4 text-white items-center   '>
+      <nav className=' md:flex gap-4 text-white items-center  '>
         <ul className='hidden md:flex gap-3 items-center '>
           <li>Home</li>
           <li>Product</li>
           <li>Category</li>
           <li>Contact</li>
-        </ul>
-        
-      
-
+        </ul>  
       </nav>
     </header>
   );
