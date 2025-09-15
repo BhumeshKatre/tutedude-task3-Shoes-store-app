@@ -110,7 +110,7 @@ const MainLayout = () => {
   return (
     <div className="bg-black p-5">
       <Navbar />
-      <div className="py-10 grid grid-cols-2 gap-4">
+      <div className="py-10 grid md:grid-cols-2 gap-4">
         <AvailableShoes
           products={products}
           handleOnClick={handleOnClick} />
