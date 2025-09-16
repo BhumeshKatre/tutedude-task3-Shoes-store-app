@@ -1,9 +1,10 @@
 import React from 'react';
+import { FaCartArrowDown } from "react-icons/fa";
 
 const Cart = ({ cartItem, handleIncreseBtn , decreseQuantity , total}) => {
   return (
-    <div className='border border-blue-200 p-2'>
-      <h1 className=" font-bold px-5">CART</h1>
+    <div className='border border-blue-200 p-2 bg-white'>
+      <h1 className=" font-bold px-5 flex items-center gap-3 text-xl mb-2"><FaCartArrowDown />CART</h1>
       <div className="">
         {cartItem.length !== 0 ? (
           cartItem.map((item, indx) => (
@@ -38,7 +39,7 @@ const Cart = ({ cartItem, handleIncreseBtn , decreseQuantity , total}) => {
             </div>
           ))
         ) : (
-          <div className="text-center bg-blue-300 p-2">
+          <div className="text-center bg-blue-300 p-2 mb-3">
             <p>Your Cart is empty</p>
           </div>
         )}

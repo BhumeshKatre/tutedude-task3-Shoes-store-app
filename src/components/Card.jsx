@@ -4,7 +4,7 @@ const Card = ({ item, handleOnClick, cartItem }) => {
 
  const itemAlreadyExist = cartItem.find((cart)=>cart.name == item.name);
   return (
-    <div className="card border-2 border-blue-300 p-4 rounded-sm shadow">
+    <div className="card border-2 border-blue-300 p-4 rounded-xl shadow-md bg-white">
       <img className="w-full h-36" srcSet={item.img} alt="" />
       <div className="p-2">
         <p>{item.name}</p>
