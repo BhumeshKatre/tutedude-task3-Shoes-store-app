@@ -7,66 +7,67 @@ import LogoImg from "/img/logo.jpg";
 import Shoes1 from "/img/p1.png";
 import Navbar from "../components/Navbar";
 import AvailableShoes from "../components/AvailableShoes";
-import Cart from '../components/Cart'
+import Cart from "../components/Cart";
 
 const MainLayout = () => {
-  const [cartItem, setCartItem] = useState([]); 
+  const [cartItem, setCartItem] = useState([]);
 
   const products = [
     {
-      name: "SoleMates Brown Boots - ",
+      name: "SoleMates Brown Boots  ",
       price: "119",
       img: Shoes1,
     },
     {
-      name: "TrailBlazer Black Sneakers - ",
+      name: "TrailBlazer Black Sneakers  ",
       price: "89",
       img: Shoes2,
     },
     {
-      name: "UrbanWalk White Trainers - ",
+      name: "UrbanWalk White Trainers  ",
       price: "99",
       img: Shoes3,
     },
     {
-      name: "PeakPro Hiking Shoes - ",
+      name: "PeakPro Hiking Shoes  ",
       price: "139",
       img: Shoes5,
     },
     {
-      name: "MetroFlex Loafers - ",
+      name: "MetroFlex Loafers  ",
       price: "79",
       img: Shoes4,
     },
     {
-      name: "SwiftStep Running Shoes - ",
+      name: "SwiftStep Running Shoes  ",
       price: "109",
-      img: LogoImg,
+      img: Shoes2,
     },
     {
-      name: "ClassicTan Formal Shoes - ",
+      name: "ClassicTan Formal Shoes  ",
       price: "129",
-      img: LogoImg,
+      img: Shoes5,
     },
     {
-      name: "RuggedEdge Combat Boots - ",
+      name: "RuggedEdge Combat Boots  ",
       price: "149",
-      img: LogoImg,
+      img: Shoes1,
     },
     {
       name: "CloudSoft Slip-ons - ",
       price: "69",
-      img: LogoImg,
+      img: Shoes3,
     },
     {
       name: "ZenStride Sandals - ",
       price: "59",
-      img: LogoImg,
+      img: Shoes4,
     },
   ];
 
   const total = cartItem.reduce(
-    (acc, item) => acc + (Number(item.price) || 0) * (Number(item.quantity) || 0),
+    (acc, item) =>
+      acc + (Number(item.price) || 0) * (Number(item.quantity) || 0),
     0
   );
 
@@ -108,18 +109,24 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="bg-black p-5">
+    <div className="p-5">
       <Navbar />
-      <div className="py-10 grid md:grid-cols-2 gap-4">
-        <AvailableShoes
-          products={products}
-          handleOnClick={handleOnClick} />
-        <Cart
-          cartItem={cartItem}
-          handleIncreseBtn={handleIncreseBtn}
-          decreseQuantity={decreseQuantity}
-          total={total}
-        />
+      <div className="py-10 flex flex-col md:flex-row gap-4">
+        <div className="md:w-[50%] flex-1 md:order-1 order-2">
+          <AvailableShoes
+            products={products}
+            handleOnClick={handleOnClick}
+            cartItem={cartItem}
+          />
+        </div>
+        <div className="md:w-[50%] md:order-2 order-1">
+          <Cart
+            cartItem={cartItem}
+            handleIncreseBtn={handleIncreseBtn}
+            decreseQuantity={decreseQuantity}
+            total={total}
+          />
+        </div>
       </div>
     </div>
   );
