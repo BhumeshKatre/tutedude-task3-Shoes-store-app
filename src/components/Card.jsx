@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Card = ({ item, handleOnClick }) => {
+const Card = ({ item, handleOnClick, cartItem }) => {
 
+ const itemAlreadyExist = cartItem.find((cart)=>cart.name == item.name);
   return (
-    <div className="card bg-pink-400 p-4 rounded-sm">
+    <div className="card border-2 border-blue-300 p-4 rounded-sm shadow">
       <img className="w-full h-36" srcSet={item.img} alt="" />
       <div className="p-2">
         <p>{item.name}</p>
@@ -11,12 +12,23 @@ const Card = ({ item, handleOnClick }) => {
 
       </div>
       <div className="text-center">
-        <button
-          onClick={() => handleOnClick(item)}
-          className="px-2 py-2 bg-orange-200 font-bold rounded-lg hover:bg-orange-400 "
-        >
-          Add to Cart
-        </button>
+        
+        {itemAlreadyExist ? (
+          <button
+            onClick={() => handleOnClick(item)}
+            disabled
+            className='w-full px-2 py-2 bg-blue-200  rounded-lg  '
+          >
+            ADDED
+            </button>
+            ) : (
+            <button
+              onClick={() => handleOnClick(item)}
+              disabled={itemAlreadyExist}
+              className='w-full px-2 py-2 bg-blue-400 font-bold rounded-lg hover:bg-blue-700 '
+            > ADD TO CART</button>
+            )
+        }
       </div>
     </div>
   );
