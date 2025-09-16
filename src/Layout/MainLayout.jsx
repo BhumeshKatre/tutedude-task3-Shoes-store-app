@@ -109,7 +109,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="p-5">
+    <div className="p-5 bg-gray-100">
       <Navbar />
       <div className="py-10 flex flex-col md:flex-row gap-4">
         <div className="md:w-[50%] flex-1 md:order-1 order-2">
